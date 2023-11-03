@@ -1,0 +1,49 @@
+API
+Application Programming Interface
+
+FRONT END
+    |
+BACK END
+    |
+DATABASE 
+
+Open API == CCTV, weatherinfo, bus info, ...
+
+https://openweathermap.org/
+
+PW : cyrielle26
+
+API / Current Weather Data / subscribe
+
+cyrielle / My services == subscribe check
+
+api doc
+
+https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+
+
+lat 의도값
+long 경도값
+http://map.esran.com/
+
+
+Chrome webstore /
+JSON Formatter
+
+https://axios-http.com/docs/intro
+
+Javascript Promise
+based - synchronous - asynchronous
+기반     동기적          비동기적
+|__
+
+Terminal
+|
+npm install axios
+
+
+Axios Instance
+https://api.openweathermap.org/data/2.5/
+
+
+weather?lat={lat}&lon={lon}
