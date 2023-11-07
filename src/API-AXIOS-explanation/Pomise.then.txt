@@ -1,0 +1,17 @@
+Promise.prototype.then()
+
+The then() method of Promise instances 
+takes up to two arguments: 
+-callback functions for the fulfilled 
+-rejected cases of the Promise. 
+It immediately returns an equivalent Promise object,
+allowing you to chain calls to other promise methods.
+
+const promise1 = new Promise((resolve, reject) => {
+  resolve('Success!');
+});
+
+promise1.then((value) => {
+  console.log(value);
+  // Expected output: "Success!"
+});

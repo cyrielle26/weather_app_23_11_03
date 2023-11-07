@@ -1,17 +1,18 @@
 import axios from "axios";
+
 const instance = axios.create({
   baseURL: "https://api.openweathermap.org/data/2.5/",
-  //OpenWeather parameters
   params: {
     units: "metric",
     lang: "kr",
-    //MY API KEY
-    appid: "e810d71b6225cf11a8d55f743af92e49",
+    appid: "c0d2fa1aa8da5aaa1f03a56e5f10f5c4",
   },
 });
 
 export const getWeather = () => {
-  const lat = 35.256968236543194;
-  const lon = 129.219119605405;
-  return instance.get(`weather?lat=${lat}&lon=${lon}`);
+  const lat = 35.158049371114956;
+  const lon = 129.05986219337697;
+  return instance
+    .get(`weather?lat=${lat}&lon=${lon}`)
+    .then((response) => response.data);
 };
