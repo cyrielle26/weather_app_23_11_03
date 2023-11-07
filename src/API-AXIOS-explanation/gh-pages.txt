@@ -1,0 +1,5 @@
+https://www.npmjs.com/package/gh-pages
+
+gh pages
+
+npm install gh-pages --save-dev
