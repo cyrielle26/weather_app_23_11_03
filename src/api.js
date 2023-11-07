@@ -1,5 +1,7 @@
 import axios from "axios";
 
+
+
 const instance = axios.create({
   baseURL: "https://api.openweathermap.org/data/2.5/",
   params: {
@@ -9,10 +11,12 @@ const instance = axios.create({
   },
 });
 
-export const getWeather = () => {
-  const lat = 35.158049371114956;
-  const lon = 129.05986219337697;
+export const getWeather = ({ queryKey }) => {
+  const [_, lat, lon] = queryKey;
+
   return instance
     .get(`weather?lat=${lat}&lon=${lon}`)
     .then((response) => response.data);
 };
+
+navigator.geolocation.getCurrentPosition

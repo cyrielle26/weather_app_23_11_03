@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { getWeather } from "../api";
 import styled from "styled-components";
+import { useCurrentWeather } from "../lib/useCurrentWeather";
+import { Loading } from "../component/Loading";
 
 const Wrap = styled.div`
   max-width: 400px;
@@ -69,11 +71,16 @@ const Con = styled.div`
 `;
 
 export const Home = () => {
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["weather"],
+  const { lat, lon } = useCurrentWeather();
+
+
+
+  const { data, isLoading, } = useQuery({
+    queryKey: ["weather", lat, lon],
     queryFn: getWeather,
   });
 
+/* 
   if (isLoading) {
     return "Loading";
   }
@@ -84,7 +91,7 @@ export const Home = () => {
 
   if (!data) {
     return "No data available"; // Handle the case where data is not available.
-  }
+  } */
 
   // =>api에 요청할때 사용하는 hook
   // =>비동기 통신 사용시 상태관리하는 hook
@@ -92,19 +99,19 @@ export const Home = () => {
 
   console.log(data);
 
-  const {
+  /* const {
     name,
     main: { temp },
-  } = data;
+  } = data; */
 
   return (
     <>
-      {isLoading ? (
-        "loading"
+      {!isLoading ? (
+        <Loading />
       ) : (
         <Wrap>
-          <Location>{name}</Location>
-          <Temp>{Math.round(temp)}°</Temp>
+            <Location>{data?.name}</Location>
+            <Temp>{Math.round(data?.main?.temp)}°</Temp>
           <Desc>{data?.weather[0]?.description}</Desc>
 
           <Separ></Separ>
