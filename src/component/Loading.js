@@ -3,7 +3,9 @@ import styled, { keyframes } from "styled-components"
 const Container = styled.div`
 width:100%;
 height:100vh;
-position:relative;`;
+position:relative;
+justify-content:center;
+align-items:center;`;
 
 const LoadingAni = keyframes`
 100%{
@@ -18,7 +20,7 @@ border-color: salmon transparent transparent transparent ;
 animation: ${LoadingAni} 1s infinite;`;
 
 export const Loading = () => {
-    return
+    return 
     <Container>
         < Spinner></Spinner>
 

@@ -3,3 +3,27 @@ https://www.npmjs.com/package/gh-pages
 gh pages
 
 npm install gh-pages --save-dev
+
+DEEVELOPPER npm install gh-page--save-d
+
+
+package json
+
+  "scripts": {
+    ....
+  "predeploy":"npm run build",
+    "deploy": "gh-pages -d build"}
+
+
+
+
+   URL
+
+   Homepage: " http://id.github.io/repositoryname"
+
+
+
+  Homepage:  "http://cyrielle26.github.io/weater_app_23_11_03"
+
+
+  npm run deploy 

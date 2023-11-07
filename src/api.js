@@ -19,4 +19,3 @@ export const getWeather = ({ queryKey }) => {
     .then((response) => response.data);
 };
 
-navigator.geolocation.getCurrentPosition
